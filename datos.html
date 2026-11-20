@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datos · CIC VIVES</title>
+<meta name="description" content="Laboratorio de datos de CIC VIVES: vista previa del tablero de continuidad de energía y agua.">
+<meta property="og:title" content="Datos · CIC VIVES">
+<meta property="og:description" content="Laboratorio de datos de CIC VIVES: vista previa del tablero de continuidad de energía y agua.">
+<meta name="theme-color" content="#173B32">
+<link rel="icon" type="image/png" href="assets/img/avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="datos">
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="CIC VIVES, inicio"><img src="assets/img/logo.png" alt="CIC VIVES · Investigación · Conservación · Restauración"></a>
+    <nav aria-label="Principal">
+      <ul id="menu">
+        <li><a href="centro.html" data-p="centro">Centro</a></li>
+        <li><a href="programas.html" data-p="programas">Programas</a></li>
+        <li><a href="pilotos.html" data-p="pilotos">Pilotos</a></li>
+        <li><a href="datos.html" data-p="datos">Datos</a></li>
+        <li><a href="valores.html" data-p="valores">Valores</a></li>
+        <li><a href="inspiracion.html" data-p="inspiracion">Inspiración</a></li>
+        <li><a href="colaborar.html" data-p="colaborar">Colaborar</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-dark cta" href="colaborar.html#contacto">Contacto</a>
+    <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Inicio</a> / Datos</div>
+    <span class="eyebrow">Laboratorio de datos</span>
+    <h1>Datos con <em>procedencia</em></h1>
+    <p>Del sensor al tablero: series, vacíos, fichas de calidad y exportación, con una receta reproducible detrás de cada gráfico.</p>
+  </div>
+</section><!-- DATOS -->
+<section id="datos" class="dark">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Laboratorio de datos</span>
+      <h2>Así se ve un tablero de continuidad</h2>
+      <p class="lead">Vista previa del piloto propuesto: series, vacíos, rangos y fecha de actualización, con exportación CSV y ficha de calidad. Los valores son sintéticos y sirven solo para mostrar el diseño.</p>
+    </div>
+    <div class="dash rv">
+      <div class="dpanel">
+        <div class="dtop">
+          <div class="seg" role="group" aria-label="Variable">
+            <button type="button" aria-pressed="true" data-v="soc">Batería (%)</button>
+            <button type="button" aria-pressed="false" data-v="tank">Tanque de agua (%)</button>
+            <button type="button" aria-pressed="false" data-v="kwh">Generación solar (kWh)</button>
+          </div>
+          <span class="synth">Datos sintéticos · demostración</span>
+        </div>
+        <svg id="chart" role="img" aria-label="Serie diaria sintética de 30 días"></svg>
+        <div class="tip" id="tip2"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:10px">
+          <span class="mono" style="font-size:11px;color:#7F9A91">Franjas ámbar: días sin datos (registro conservado, sin interpolar)</span>
+          <button class="btn btn-pri" type="button" id="csv" style="padding:10px 16px;font-size:13px">Descargar CSV</button>
+        </div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="l">Último valor</div><div class="v" id="k1">–</div><div class="d" id="k1d"></div></div>
+        <div class="kpi"><div class="l">Disponibilidad de datos</div><div class="v" id="k2">–</div><div class="d">días con registro / días del periodo</div></div>
+        <div class="kpi"><div class="l">Ficha de calidad</div>
+          <div class="ficha">
+            <div><span>dataset_id</span><span>DEMO-ENE-01</span></div>
+            <div><span>site_id</span><span>LPZ-DEMO</span></div>
+            <div><span>fuente</span><span>sintética</span></div>
+            <div><span>resolución</span><span>diaria</span></div>
+            <div><span>unidad</span><span id="unit">%</span></div>
+            <div><span>fecha_corte</span><span id="corte">–</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow rv" aria-label="Flujo de datos de referencia">
+      <span>Captura y catálogo</span><i>→</i><span>Originales congelados</span><i>→</i><span>Limpieza y control de calidad</span><i>→</i><span>Transformación versionada</span><i>→</i><span>Análisis</span><i>→</i><span>Visualización</span><i>→</i><span>Publicación autorizada</span>
+    </div>
+  </div>
+</section>
+
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand"><img src="assets/img/avatar.png" alt=""><b>CIC <span>VIVES</span></b></div>
+        <p style="margin-top:18px;max-width:34ch">Investigación · Conservación · Restauración. Cielo, mar y tierra desde Baja California Sur.</p>
+      </div>
+      <div><h4>Centro</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="centro.html">Identidad y plan</a></li><li><a href="valores.html">Valores</a></li><li><a href="inspiracion.html">Inspiración</a></li></ul></div>
+      <div><h4>Trabajo</h4><ul><li><a href="programas.html">Programas</a></li><li><a href="pilotos.html">Pilotos</a></li><li><a href="datos.html">Laboratorio de datos</a></li><li><a href="colaborar.html">Colaborar</a></li></ul></div>
+      <div><h4>Fuentes</h4><ul><li>Informe de la Compañía Criadora de Concha y Perla de la Baja California, S.A. · A.H.P.L.M.</li><li>Ficha INAH del primer criadero de ostras perleras</li><li>Natural Earth 1:10m</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Centro de Investigación y Conservación Gaston J. Vives Gourieux, A.C. · La Paz, B.C.S.</span>
+      <span>Versión 1.0.0 · <a href="mailto:contacto@cicvives.org">contacto@cicvives.org</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
